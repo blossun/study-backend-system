@@ -1,0 +1,11 @@
+config:
+  target: "http://34.125.171.251"
+  phases:
+    - duration: 360
+      arrivalRate: 6
+      name: Warm up
+scenarios:
+  - name: "just get hash"
+    flow:
+      - get:
+          url: "/hash/123"
