@@ -1,8 +1,8 @@
 config:
-  target: "http://34.64.111.199"
+  target: "http://"
   phases:
     - duration: 360
-      arrivalRate: 1
+      arrivalRate: 2
       name: Warm up
 scenarios:
   - name: "just get hash"
