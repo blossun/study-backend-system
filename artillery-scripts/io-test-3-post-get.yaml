@@ -1,0 +1,27 @@
+config:
+  target: "http://35.201.140.126"
+  phases:
+    - duration: 60
+      arrivalRate: 15
+      name: Warm up
+    - duration: 120
+      arrivalRate: 15
+      rampTo: 500
+      name: Ramp up load
+    - duration: 600
+      arrivalRate: 500
+      name: Sustained load
+  payload:
+    path: "./dataset/ratings_test_10k.csv"
+    fields:
+      - "content"
+scenarios:
+  - name: "just post content"
+    flow:
+      - post:
+          url: "/post"
+          json:
+            content:  "{{ content }}"
+  - think: 1 #1초 동안 대기
+  - get:
+    url: "/posts"
