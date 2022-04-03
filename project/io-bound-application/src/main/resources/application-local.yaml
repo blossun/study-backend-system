@@ -1,13 +1,13 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/postgresql
-    username: postgresql
-    password: postgrespassword
-  jpa:
-    show-sql: true
-    hibernate:
-      dialect: org.hibernate.dialect.PostgreSQLDialect
-      ddl-auto: update
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/postgresql
+#    username: postgresql
+#    password: postgrespassword
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      dialect: org.hibernate.dialect.PostgreSQLDialect
+#      ddl-auto: update
   rabbitmq:
     host: localhost
     username: guest
