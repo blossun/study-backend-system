@@ -1,0 +1,19 @@
+config:
+  target: "http://lsp-inference-jp.line-apps-rc.com"
+  phases:
+    - duration: 60 # (s) 성능테스트 진행 총 시간
+      arrivalRate: 20 # (users) 매초 만들 새로운 vuser 수
+      name: Warm up
+  payload:
+    path: "./dataset/product_ids_real_part1.csv"
+    fields:
+      - "productId"
+scenarios:
+  - name: "product auto-category mapping service"
+    flow:
+      - put:
+          url: "/api/v1/categoryMappings/products/{{ productId }}"
+          auth:
+            user: lsp-jp
+            pass: cd5ee207-655e-4fb4-b7b8-8251f31927c3
+
